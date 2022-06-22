@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Button, Col, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import {
+  Alert,
+  Col,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { serverBaseUrl } from "../endpoints";
 import { getLeads } from "../services/getLeads";
@@ -75,7 +81,6 @@ const Home = () => {
         }
       }
     }
-
   };
 
   const flattenObject = (obj) => {
@@ -127,13 +132,13 @@ const Home = () => {
           <OverlayTrigger
             overlay={<Tooltip id="tooltip-disabled">Click to copy!</Tooltip>}
           >
-            <Button
-              variant="light"
+            <Alert
+              variant="dark"
               onClick={copyToClipboard}
               style={{ textTransform: "none" }}
             >
               {serverBaseUrl + "/webhook/" + selectedWebhook.id}
-            </Button>
+            </Alert>
           </OverlayTrigger>
         </Row>
       )}
