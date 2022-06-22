@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { Button, Col, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { useParams } from "react-router-dom";
@@ -61,7 +62,6 @@ const Home = () => {
           if (!columns.some((e) => e.field === header.field)) {
             columns.push(header);
           }
-          console.log(columns);
         } else {
           for (const j in lead[i]) {
             const header = {
@@ -77,7 +77,6 @@ const Home = () => {
       }
     }
 
-    console.log(columns);
   };
 
   const flattenObject = (obj) => {
@@ -116,7 +115,6 @@ const Home = () => {
       );
       return fo;
     });
-    console.log(rows);
   };
 
   const [datatable, setDatatable] = useState();

@@ -16,9 +16,7 @@ const Sidebar = ({
   const handleShow = () => setShow(true);
 
   const addWebhook = (webhook) => {
-    console.log(webhook);
     webhooks.push(webhook);
-    console.log(webhooks);
     setWebhooks(webhooks);
   };
 
@@ -33,7 +31,7 @@ const Sidebar = ({
             <ListGroup.Item
               key={webhook.id}
               action
-              active={selectedWebhook === webhook.id}
+              active={selectedWebhook.id === webhook.id}
               onClick={() => {
                 setSelectedWebhook(webhook);
                 fetchLeads(webhook);
