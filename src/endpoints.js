@@ -1,4 +1,4 @@
-const host = "http://localhost:8080";
+const host = "https://zisho.io/privyr";
 const version = "/v1";
 
 export const serverBaseUrl = host + version;

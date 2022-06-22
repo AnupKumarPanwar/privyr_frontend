@@ -31,7 +31,7 @@ const Sidebar = ({
             <ListGroup.Item
               key={webhook.id}
               action
-              active={selectedWebhook.id === webhook.id}
+              active={selectedWebhook && selectedWebhook.id === webhook.id}
               onClick={() => {
                 setSelectedWebhook(webhook);
                 fetchLeads(webhook);
